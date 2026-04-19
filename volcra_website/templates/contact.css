@@ -117,3 +117,31 @@ body {
 .a-navbar:hover {
     color: #4A9CC7;
 }
+.img-content-1 {
+    background-color: black;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+}
+
+.img-content-2 {
+    background-color: black;
+    border-radius: 50%;    
+    width: 75px;
+    height: 75px;
+}
+
+.img-content-3 {
+    background-color: black;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+}
+
+.img-content-4 {
+    background-color: black;
+    border-radius: 50%;
+    width: 75px;
+    height: 75px;
+}
+
