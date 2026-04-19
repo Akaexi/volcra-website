@@ -15,29 +15,32 @@
 ============================================================ */
 
 :root {
-  --black:      #000000;
-  --surface:    #111111;
-  --surface2:   #1a1a1a;
-  --blue:       #4A9CC7;
-  --blue-dim:   #1e3d4f;
-  --white:      #ffffff;
-  --gray:       #888888;
-  --border:     #222222;
-  --danger:     #E24B4A;
-  --success:    #3db87a;
-  --font:       'Courier New', Courier, monospace;
+  --black: #000000;
+  --surface: #111111;
+  --surface2: #1a1a1a;
+  --blue: #4A9CC7;
+  --blue-dim: #1e3d4f;
+  --white: #ffffff;
+  --gray: #888888;
+  --border: #222222;
+  --danger: #E24B4A;
+  --success: #3db87a;
+  --font: 'Courier New', Courier, monospace;
 }
 
 /* ============================================================
    RESET & BASE
 ============================================================ */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   background-color: var(--black);
   color: var(--white);
@@ -98,7 +101,7 @@ a:hover {
   font-weight: bold;
   letter-spacing: 2px;
   color: var(--white);
-  
+
 }
 
 .logo-wrapper {
@@ -180,7 +183,8 @@ a:hover {
 }
 
 .a-navbar {
-  color: #888888; /* sesuai warna gray VOLCRA.LAB */
+  color: #888888;
+  /* sesuai warna gray VOLCRA.LAB */
   text-decoration: none;
   font-size: 12px;
   letter-spacing: 1px;
@@ -188,7 +192,8 @@ a:hover {
 }
 
 .a-navbar:hover {
-  color: #4A9CC7; /* biru VOLCRA.LAB saat hover */
+  color: #4A9CC7;
+  /* biru VOLCRA.LAB saat hover */
 }
 
 /* Kanan: status ESP32 */
@@ -216,7 +221,8 @@ a:hover {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--gray); /* default: abu-abu saat loading */
+  background-color: var(--gray);
+  /* default: abu-abu saat loading */
   transition: background-color 0.4s;
 }
 
@@ -314,7 +320,7 @@ a:hover {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.85));
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
   padding: 20px 8px 8px;
   opacity: 0;
   transition: opacity 0.2s;
@@ -520,9 +526,11 @@ a:hover {
   .gallery-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
   .header {
     padding: 0 16px;
   }
+
   .main {
     padding: 24px 16px 60px;
   }
