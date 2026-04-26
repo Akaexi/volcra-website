@@ -1,6 +1,9 @@
-<html>
+<!DOCTYPE html>
+<html lang="id">
 
 <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>VolcraLab</title>
     <link rel="stylesheet" href="Volcralab.css" />
 </head>
@@ -8,7 +11,9 @@
 <body>
     <div class="container">
 
-        <!-- navigation bar -->
+        <!-- ============================================================
+             NAVIGATION BAR
+        ============================================================ -->
         <header class="head-navbar">
 
             <div class="header-left">
@@ -32,23 +37,149 @@
             </ul>
 
         </header>
-        <!-- navigation bar selesai -->
+        <!-- NAVIGATION BAR SELESAI -->
 
-        <!-- konten 1 -->
-        <div class="content-1">
-            <a href="https://github.com/Akaexi?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPNTY3MDY3MzQzMzUyNDI3AAGn4sOeK9URSswh6dTONP6xUshUMlXWSTd-TJv12OR6T1VHb6esJGqvB6Fro6I_aem_cn8TazwY_wxd5esPJGRN_w"
-                class="a-content">
-                <img src="icon.png" class="img-content" />
-            </a>
-        </div>
-        <!-- konten 1 selesai -->
+        <!-- ============================================================
+             MAIN STAGE
+        ============================================================ -->
+        <main class="stage">
 
-        <!-- footer -->
-        <div>
-            <h1 class="list-footer">hello world 1</h1>
-            <h2 class="list-footer">hello world 2</h2>
-        </div>
-        <!-- footer selesai -->
+            <!-- CHIP / LOGO UTAMA
+                 Awal: posisi tengah layar
+                 Setelah klik/scroll: geser ke kiri
+            -->
+            <div class="logo-zone" id="logoZone">
+
+                <!-- Canvas menggambar efek chip di sekeliling logo -->
+                <canvas id="chipCanvas" width="140" height="140"></canvas>
+
+                <!-- ✏️ GANTI src di sini untuk mengubah logo -->
+                <img src="logovolcra.jpeg" id="chipLogoImg" class="chip-logo-img" alt="VOLCRA.LAB" />
+
+                <div class="click-hint" id="clickHint"></div>
+            </div>
+
+            <!-- CIRCUIT + CARDS (muncul setelah chip aktif) -->
+            <div class="right-zone" id="rightZone">
+
+                <!-- Jalur sirkuit SVG -->
+                <svg id="circSVG" class="circuit-svg" viewBox="0 0 130 300" xmlns="http://www.w3.org/2000/svg">
+
+                    <!-- TOP branch -->
+                    <path id="cp1" fill="none" stroke="#4A9CC7" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        d="M0,150 L14,150 L14,90 L28,90 L28,70 L44,70 L44,50 L130,50"
+                        stroke-dasharray="400" stroke-dashoffset="400"/>
+                    <path id="cp1b" fill="none" stroke="#4A9CC7" stroke-width="1"
+                        stroke-linecap="round" stroke-linejoin="round" opacity=".5"
+                        d="M28,90 L28,80 L36,80 L36,60 L50,60"
+                        stroke-dasharray="100" stroke-dashoffset="100"/>
+                    <path id="cp1c" fill="none" stroke="#4A9CC7" stroke-width="1"
+                        stroke-linecap="round" opacity=".3"
+                        d="M44,70 L44,62 L38,62"
+                        stroke-dasharray="50" stroke-dashoffset="50"/>
+                    <circle id="dot1"  cx="130" cy="50"  r="3" fill="#4A9CC7" opacity="0"/>
+                    <circle id="dot1b" cx="50"  cy="60"  r="2" fill="#4A9CC7" opacity="0"/>
+                    <circle id="dot1c" cx="38"  cy="62"  r="2" fill="#4A9CC7" opacity="0"/>
+
+                    <!-- MID branch -->
+                    <path id="cp2" fill="none" stroke="#4A9CC7" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        d="M0,150 L22,150 L22,138 L40,138 L40,150 L130,150"
+                        stroke-dasharray="300" stroke-dashoffset="300"/>
+                    <path id="cp2b" fill="none" stroke="#4A9CC7" stroke-width="1"
+                        stroke-linecap="round" opacity=".5"
+                        d="M22,150 L22,162 L34,162 L34,150"
+                        stroke-dasharray="80" stroke-dashoffset="80"/>
+                    <path id="cp2c" fill="none" stroke="#4A9CC7" stroke-width="1"
+                        stroke-linecap="round" opacity=".35"
+                        d="M40,138 L52,138 L52,128 L66,128"
+                        stroke-dasharray="80" stroke-dashoffset="80"/>
+                    <circle id="dot2"  cx="130" cy="150" r="3" fill="#4A9CC7" opacity="0"/>
+                    <circle id="dot2b" cx="34"  cy="150" r="2" fill="#4A9CC7" opacity="0"/>
+                    <circle id="dot2c" cx="66"  cy="128" r="2" fill="#4A9CC7" opacity="0"/>
+
+                    <!-- BOT branch -->
+                    <path id="cp3" fill="none" stroke="#4A9CC7" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        d="M0,150 L14,150 L14,210 L28,210 L28,230 L44,230 L44,250 L130,250"
+                        stroke-dasharray="400" stroke-dashoffset="400"/>
+                    <path id="cp3b" fill="none" stroke="#4A9CC7" stroke-width="1"
+                        stroke-linecap="round" opacity=".5"
+                        d="M28,210 L28,222 L40,222 L40,240 L54,240"
+                        stroke-dasharray="100" stroke-dashoffset="100"/>
+                    <path id="cp3c" fill="none" stroke="#4A9CC7" stroke-width="1"
+                        stroke-linecap="round" opacity=".3"
+                        d="M44,230 L44,240 L38,240"
+                        stroke-dasharray="50" stroke-dashoffset="50"/>
+                    <circle id="dot3"  cx="130" cy="250" r="3" fill="#4A9CC7" opacity="0"/>
+                    <circle id="dot3b" cx="54"  cy="240" r="2" fill="#4A9CC7" opacity="0"/>
+                    <circle id="dot3c" cx="38"  cy="240" r="2" fill="#4A9CC7" opacity="0"/>
+
+                </svg>
+
+                <!-- Cards -->
+                <div class="cards-col" id="cardsCol">
+
+                    <a class="vcard" href="#" id="card-lab">
+                        <div class="vcard-corner tl"></div>
+                        <div class="vcard-corner tr"></div>
+                        <div class="vcard-corner bl"></div>
+                        <div class="vcard-corner br"></div>
+                        <div class="vcard-line-top"></div>
+                        <div class="vcard-line-left"></div>
+                        <div class="vcard-line-bot"></div>
+                        <div class="vcard-dot"></div>
+                        <div class="card-tag">[ LAB ]</div>
+                        <div class="card-title">Projects</div>
+                        <div class="card-desc">IoT builds &amp; electronics experiments</div>
+                        <div class="card-arr">→ explore</div>
+                    </a>
+
+                    <a class="vcard" href="about.html" id="card-about">
+                        <div class="vcard-corner tl"></div>
+                        <div class="vcard-corner tr"></div>
+                        <div class="vcard-corner bl"></div>
+                        <div class="vcard-corner br"></div>
+                        <div class="vcard-line-top"></div>
+                        <div class="vcard-line-left"></div>
+                        <div class="vcard-line-bot"></div>
+                        <div class="vcard-dot"></div>
+                        <div class="card-tag">[ WHO ]</div>
+                        <div class="card-title">About</div>
+                        <div class="card-desc">Electronics enthusiast &amp; maker</div>
+                        <div class="card-arr">→ read more</div>
+                    </a>
+
+                    <a class="vcard" href="contact.html" id="card-contact">
+                        <div class="vcard-corner tl"></div>
+                        <div class="vcard-corner tr"></div>
+                        <div class="vcard-corner bl"></div>
+                        <div class="vcard-corner br"></div>
+                        <div class="vcard-line-top"></div>
+                        <div class="vcard-line-left"></div>
+                        <div class="vcard-line-bot"></div>
+                        <div class="vcard-dot"></div>
+                        <div class="card-tag">[ REACH ]</div>
+                        <div class="card-title">Contact</div>
+                        <div class="card-desc">GitHub · Instagram · TikTok · WhatsApp</div>
+                        <div class="card-arr">→ connect</div>
+                    </a>
+
+                </div>
+            </div>
+
+        </main>
+        <!-- MAIN STAGE SELESAI -->
+
+        <!-- ============================================================
+             FOOTER
+        ============================================================ -->
+        <footer class="site-footer">
+            <span class="footer-left">© VOLCRA.LAB</span>
+            <span class="footer-right">Electronics &amp; IoT Laboratory</span>
+        </footer>
+        <!-- FOOTER SELESAI -->
 
     </div>
 
